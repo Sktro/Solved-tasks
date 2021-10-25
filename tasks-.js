@@ -301,3 +301,194 @@ numbers.unshift(startNum);
 return numbers;
 }
 };
+
+// сделать из положительног числа - отрицательное
+function makeNegative(num) {
+    if(num === 0){
+      return 0;
+      }else if (num > 0) {
+        var result = num * - 1;
+        return result;
+      } else {
+        return num;
+      }
+  }
+
+
+  // функция для подсчета скидки с учетом кол-ва дней
+  function rentalCarCost(d) {
+    let price = 40;
+    if (d >= 7) {
+      let discount = (d * price) - 50;
+      return discount;
+    } else if (d >= 3) {
+      let discount = (d * price) - 20;
+      return discount;
+    } else {
+      let priceNotDiscount = price * d;
+      return priceNotDiscount;
+    }
+    }
+
+
+    // функция для переворота слов в предложении с последнего к первому
+    function reverseWords(str){
+        let newArray = str.split(' ');
+        let newReverse = newArray.reverse();
+        let newStr = newReverse.join(' ');
+        return newStr; 
+      }
+
+// функция определения века из года
+function century(year) {
+    let century = year / 100
+      return Math.ceil(century);
+    }
+
+// функция переворота массива 
+function reverseList(list) {
+    return list.reverse();
+    }
+
+// фунция для определения новой позиции фишки в игре после броска кубика
+    function move (position, roll) {
+        let newMove = position + (roll * 2);
+         return newMove;
+       }
+
+       // определение четного/нечетного числа 
+       function testEven(n) {
+        if (n %2 === 0) {
+          return true
+        } else {
+    return false
+        }
+    }
+
+    // задание для определения кол-ва голов 
+var laLigaGoals = 43
+var championsLeagueGoals = 10
+var copaDelReyGoals = 5
+
+var totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals;
+
+// функция для разбития строки в массив слов
+function stringToArray(string){
+    return string.split(' ');
+    }
+
+    // функция для определения количества страниц, которых необходимо скопировать 
+    function paperwork(n, m) {
+        let paperwork = n * m;
+        if (n < 0 || m < 0) {
+          return 0
+        }
+        return paperwork;
+      }
+
+      // 11() функции для определения макисмального и минимального числа в массиве 
+      var min = function(list){
+        let min = Math.min.apply(null, list);
+        return min;
+    }
+    
+    var max = function(list){
+     let min = Math.max.apply(null, list);
+        return min;
+    }
+
+    // функция для сравнения четного числа с нечетным 
+    function lovefunc(flower1, flower2){
+        if (flower1%2 !== flower2%2) {
+          return true;
+        } else {
+          return false;
+        }
+        }
+
+        // функция удаления всех ! знаков в строке
+        function removeExclamationMarks(s) {
+            return s.replace(/[!]/g, '');
+          }
+
+          // функция для удвоения числа (15)
+          function doubleInteger(i) {
+            i = i * 2;
+           return i;
+         }
+
+// функция для сравнения имен
+         function greet (name, owner) {
+            if (name === owner) {
+              return 'Hello boss'
+            } else {
+              return 'Hello guest';
+            }
+          }
+
+          // функция замены цифр на буквы в строке 
+          function correct(string){
+    var chars = {'0':'O','1':'I','5':'S'};
+    return string.replace(/[0-9]/g, m => chars[m]);
+}
+
+// функция сложения 2х массивов 
+function arrayPlusArray(arr1, arr2) {
+    var setArray = arr1.concat(arr2);
+     var sum = 0;
+   for(var i = 0; i < setArray.length; i++){
+       sum += setArray[i];
+       }
+     return sum
+   }
+
+// функция для получения результата в зависимости от операции 
+function basicOp(operation, value1, value2)
+{
+if (operation === '+') {
+ let result = value1 + value2;
+  return result
+} else if (operation === '-') {
+ let result = value1 - value2;
+  return result
+} else if (operation === '*') {
+ let result = value1 * value2;
+  return result
+} else if (operation === '/') {
+ let result = value1 / value2;
+  return result
+}
+}
+
+// функция для определения палимдромной строки (20)
+function isPalindrome(x){
+    var x = x.toLowerCase();
+    let newArray = x.split('');
+    let newReverse = newArray.reverse();
+    let newX = newReverse.join('');
+  if (x === newX){
+    return true;
+  } else {
+    return false;
+  }
+  }
+
+  // функция замены всех слов в предложении на sex
+  function toFreud(string) {
+    if (string === ""){
+      return "";
+    }
+    let newArray = string.split(' ');
+    for (let i = 0; i < newArray.length; i++) {
+        newArray[i] = 'sex';
+    } 
+        return newArray.join(' ');
+  }
+
+  // функция вычисления площади квадрата по длине дуги окружности
+  function squareArea(A){
+    let lengthCircles = A * 4;
+     let radius = lengthCircles / (Math.PI * 2);
+      let squareArea = radius * radius;
+       return (Math.round(squareArea * 100) / 100);
+   }
