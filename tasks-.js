@@ -302,6 +302,17 @@ return numbers;
 }
 };
 
+// принимает два аргумента и генерирует последовательность.
+function generateIntegers(m, n) {
+  if (m - n === 0) {
+    return [m];
+  } else {
+  const numbers = generateIntegers(m + 1, n);
+  numbers.unshift(m);
+  return numbers;
+  }
+  };
+
 // сделать из положительног числа - отрицательное
 function makeNegative(num) {
     if(num === 0){
@@ -492,3 +503,209 @@ function isPalindrome(x){
       let squareArea = radius * radius;
        return (Math.round(squareArea * 100) / 100);
    }
+
+   // функция определяющая через сколько или сколько лет назад отец был старше сына в 2 раза
+
+   function twiceAsOld(dadYearsOld, sonYearsOld) {
+    if (dadYearsOld > sonYearsOld){
+      let result = (dadYearsOld - (sonYearsOld * 2)) * 1;
+      return Math.abs(result);
+    } 
+   }
+
+   // функция, которая возвращает в ответ четная функция или нечетная
+   function even_or_odd(number) {
+    if (number%2 === 0) {
+      return "Even";
+    } else {
+      return "Odd"
+    }
+  }
+
+  // функция возвращает счет твоего рождения сколько будет тебе лет или сколько лет было до твоего рождения 
+  function  calculateAge(a, b) {
+    if (a - b === 1){
+      return "You will be born in 1 year.";
+    } else if (a - b === -1){
+      return "You are 1 year old.";
+    } if (a < b) {
+      let result = b - a;
+      return "You are " + result +  " years old."
+    } else if (a > b) {
+      let result = a - b;
+      return "You will be born in " + result +  " years."
+    } else if (a === b) {
+      return "You were born this very year!";
+    }
+  }
+
+  //(5) функция, котороя возвращает n-кол-во элеметов из массива начиная от первого
+  function take(arr, n) {
+    let newArr = arr;
+    return newArr.slice(0,n);
+  }
+
+// функция для онвертации доллара в юань 
+function usdcny(usd) {
+  let result = usd * 6.75;
+  return result.toFixed(2) + ' Chinese Yuan'
+}
+
+// функция исправляет имя и отвечает на пустую строку (7)
+function hello(name) {
+  if (name == "" || name == undefined) {
+    return "Hello, World!";
+  }
+  return "Hello, " + name.charAt(0).toUpperCase() + name.slice(1).toLowerCase() + "!";
+}
+
+// функция вызывает строку 
+function greet(){
+  return 'hello world!'
+}
+
+// функция определяет цену за каждый символ в строке
+function billboard(name, price = 30){
+  let charactersPrice = 0;
+   for (let i = 0; i < name.length;  i++){
+     charactersPrice += price;
+   }
+     return charactersPrice;
+  } 
+
+  // (10) функция сотрирует массив по алфавиту берет первое значение и разделяет каждую букву в строке ***
+function twoSort(s) {
+var sortArray = s.sort();
+var sortArray =  sortArray[0];
+var sortArray = sortArray.split('');
+var sortArray = sortArray.join('***');
+return sortArray;
+}
+
+// функция определяет количество повторяющихся строк 'good' в массиве
+
+function well(x){
+  let wordGood = 0;
+  for(let i = 0; i < x.length; i++){
+    if (x[i] === 'good'){
+      wordGood++;
+    }
+  }
+  if (wordGood === 0) {
+    return 'Fail!';
+  } else if (wordGood <= 2) {
+    return 'Publish!';
+  } else if (wordGood > 2) {
+    return 'I smell a series!'
+  }
+}
+
+
+// функции математическиих опреции
+function add(a,b){
+  let result = a + b;
+    return result
+}
+
+function divide(a,b){
+ let result = a / b;
+    return result;
+}
+
+function multiply(a,b){
+ let result = a * b;
+    return result;
+}
+
+function mod(a,b){
+  let result = a % b;
+    return result;
+}
+   
+function exponent(a,b){
+    return Math.pow(a,b)
+}
+    
+function subt(a,b){
+    let result = a - b;
+    return result
+}
+
+// (13)функция определения квартала мексяца 
+const quarterOf = (month) => {
+  if (month <= 3){
+    return 1
+  } else if (month <= 6){
+    return 2
+  } else if (month <= 9){
+    return 3
+  } else if (month <= 12){
+    return 4
+  } 
+    }
+
+    // функция для вывода массива кол-ва положительных чисел и суммы отрицательных
+    function countPositivesSumNegatives(input) {
+      let negatives = [];
+        let positiveSum = 0;
+          let negativeSum = 0;
+      if (input == 0 || input == undefined) {
+        return [];
+      }
+        for(var i = 0; i < input.length; i++) {
+           if (input[i] > 0) {
+            positiveSum++;
+          } else if (input[i] < 0) {
+            negativeSum += input[i];
+          }
+        }
+        negatives.push(negativeSum);
+        negatives.unshift(positiveSum);
+        return negatives;
+    }
+
+    // функция возводящая каждое число в квадрат,затем суммирует (15)
+    function squareSum(numbers){
+      let squaresSum = 0;
+        for (let i = 0; i < numbers.length; i++){
+                squaresSum += (numbers[i] * numbers[i]);
+          }
+        return squaresSum;
+      }
+
+      // функция для разворота имени и фамилии
+      function nameShuffler(str){
+        let newArray = str.split(' ');
+         let newString = newArray.reverse();
+          let nameShuffler = newString.join(' ');
+         return nameShuffler;
+       }
+
+       // функция повтора строк n -кол-во раз, S - строка
+       function repeatStr (n, s) {
+        return s.repeat(n);
+       }
+
+// функция возвращает массив чисел от n до 1
+       const reverseSeq = n => {
+        if (n < 1) {
+          return [];
+        } else {
+        const numbers = reverseSeq(n-1);
+        numbers.unshift(n);
+        return numbers;
+        };
+      };
+
+      // удаление пробелов в строке 
+      function noSpace(x){
+        return x.replace(/\s+/g, '');
+        }
+
+        // замена в строке всех чисел на 0 и 1
+
+        function fakeBin(x){
+          let newString = x.replace(/[0-4]/g, '0');
+          let result = newString.replace(/[5-9]/g, '1');
+          return result;
+          }
