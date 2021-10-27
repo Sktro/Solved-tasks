@@ -709,3 +709,220 @@ const quarterOf = (month) => {
           let result = newString.replace(/[5-9]/g, '1');
           return result;
           }
+
+    // функция для определения возраста животных
+    var humanYearsCatYearsDogYears = function(humanYears) {
+      let newArray = [0,0,0];
+      if (humanYears === 1) {
+        return [1,15,15];
+      } else if (humanYears === 2){
+        return [2,24,24];
+      } else if (humanYears >= 3){
+        newArray[0] = humanYears;
+        newArray[1] = 24 + ((humanYears -2)*4);
+        newArray[2] = 24 + ((humanYears -2)*5);
+        return newArray;
+      }
+        
+      return [0,0,0];
+    }
+
+    // функция возвращает максимальный результат при разных вариантах сложения/умножения чисел
+    function expressionMatter(a, b, c) {
+      let results = [];
+      let result1 = a * (b + c);
+      results.push(result1);
+      let result2 = a * b * c;
+      results.push(result2);
+      let result3 = a + b * c;
+      results.push(result3);
+      let result4 = (a + b) * c;
+      results.push(result4);
+      let result5 = a + b + c;
+      results.push(result5);
+      let maxResult = Math.max.apply(null, results);
+      return maxResult;
+    }
+
+    // функция определяет n - кол-во и выдает ответ 
+    function hoopCount (n) {
+      if (n >= 10)  {
+        return "Great, now move on to tricks";
+      } else {
+        return "Keep at it until you get it";
+      }
+    }
+
+  // исправленная ошибка в функции
+  function main (verb, noun){
+    return verb + noun;
+  }
+
+// исправленная ошибка в функции
+  function mystery() {
+    var results =
+      {sanity: 'Hello'};
+    return results;
+  }
+
+  // функция определяющая по имени выдавая значение
+  function howManyLightsabersDoYouOwn(name) {
+    return (name === "Zach") ? 18 : 0;
+  }
+
+// (7) исправленная ошибка в функции
+  function getPlanetName(id){
+    var name;
+    switch(id){
+      case 1:
+        name = 'Mercury'
+        break;
+      case 2:
+        name = 'Venus'
+        break;
+      case 3:
+        name = 'Earth'
+        break;
+      case 4:
+        name = 'Mars'
+        break;
+      case 5:
+        name = 'Jupiter'
+        break;
+      case 6:
+        name = 'Saturn'
+        break;
+      case 7:
+        name = 'Uranus'
+        break;
+      case 8:
+        name = 'Neptune'
+        break;
+    }
+    
+    return name;
+  }
+
+  // определяет самую длиинную строку и ставит ее по середине между короткой
+  function solution(a, b){
+    if (b.length > a.length) {
+      return a + b + a;
+    }  else if (b.length < a.length) {
+      return b + a + b;
+    }
+  }
+
+  // добавление в массив элемента 
+  websites.push("codewars");
+
+  // (10)функция определения остатка 
+  function remainder(a, b){
+    if (a > b){
+      return a % b
+      } else if (a < b) {
+        return b % a;
+      }   else if (a < 0 && b < 0)
+        return 0
+  }
+
+// конвертация номера в строку
+function numberToString(num) {
+  return String(num);
+ }
+
+ // исправленная ошибка в добавлении объекта в массив
+ var items = []
+ items.push ({a: "b", c: "d"})
+
+ // исправленная ошибка в сравнении 2х функций (13)
+ function getMax1()
+{
+  let max = 
+  {
+   name: 'Max Headroom'
+  }
+  return max;
+}
+
+function getMax2()
+{
+  let max =
+  {
+    name: 'Max Headroom'
+  }
+  return max;
+}
+
+// функция проверки логина пароля Санты (14)
+function Sleigh() {}
+Sleigh.prototype.authenticate = function(name, password) {
+  if (name === "Santa Claus" && password === "Ho Ho Ho!") {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+
+// функция сложения всех чисел в массиве (15)
+function sum (numbers) {
+  let sum = 0;
+if (numbers === undefined)
+  return 0
+for (let i = 0; i < numbers.length; i++){
+  sum += numbers[i];
+}
+  return sum;
+};
+
+// функция определяющая множественное число 
+function plural(n) {
+  if (n === 1) {
+    return false 
+  } else {
+    return true
+  }
+ }
+
+ // функция, которая присваивает элементу атрибут рандомного цвета
+ var Ghost = function() {
+  var array = ['white','yellow','purple','red'];
+    var index = Math.floor(Math.random()*array.length);
+    this.color = array[index];
+};
+
+// фиксирование проблемы
+function NameMe(first, last) {
+  this.firstName = first;
+  this.lastName = last;
+  return {
+   firstName: this.firstName,
+   lastName:  this.lastName,
+   name: this.firstName + ' ' + this.lastName
+  };
+}
+
+// сделать из полодительно числа - отрицательное и наоборот 
+function opposite(number) {
+  return (number <= 0) ? Math.abs(number) : number * -1;
+ }
+
+ // функция для подсчета овец (на месте они или нет) при вводных данных массива (true и false)
+
+ function countSheeps(arrayOfSheep) {
+  let sheeps = 0
+  for (let i = 0; i < arrayOfSheep.length; i++){
+    if (arrayOfSheep[i] === true) {
+           sheeps++
+    }
+  }
+  return  sheeps;
+}
+
+// функция принимает числа и возвращает массив этих же чисел в обратном порядке
+function digitize(n) {
+  let newString = String(n);
+  let newArray = newString.split('');
+  let reverseArray = newArray.reverse();
+  return reverseArray.map(Number);
+}
