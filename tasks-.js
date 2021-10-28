@@ -926,3 +926,195 @@ function digitize(n) {
   let reverseArray = newArray.reverse();
   return reverseArray.map(Number);
 }
+
+// FCC (Use the Spread Operator to Evaluate Arrays In-Place)
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];
+console.log(arr2);
+
+//FCC(Use Destructuring Assignment to Extract Values from Objects)
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const  { today, tomorrow } = HIGH_TEMPERATURES;
+
+// FCC (Use Destructuring Assignment to Assign Variables from Objects)
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const  { today: highToday, tomorrow: highTomorrow  } = HIGH_TEMPERATURES;
+
+// FCC (Use Destructuring Assignment to Assign Variables from Nested Objects)
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+const {today: {low: lowToday, high: highToday}} = LOCAL_FORECAST;
+
+// FCC Use Destructuring Assignment to Assign Variables from ArraysPassed
+let a = 8, b = 6;
+[a,b] = [b,a];
+
+// FCC Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements (6)
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  const [a, b, ...arr] = list;
+  return arr;
+}
+const arr = removeFirstTwo(source);
+
+// FCC Use Destructuring Assignment to Pass an Object as a Function's Parameters
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+const half = ({max, min}) => (max + min) / 2.0; 
+
+//// FCC Write Concise Object Literal Declarations Using Object Property Shorthand
+const createPerson = (name, age, gender) => {
+  return {
+    name,
+    age,
+    gender
+  };
+};
+
+// FCC Write Concise Declarative Functions with ES6
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+// (10) FCC Use class Syntax to Define a Constructor Function
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); 
+
+
+// FCC Use getters and setters to Control Access to an Object (11)
+class Thermostat {
+  constructor(f) {       
+    this.f = f;
+  }
+
+  get temperature() {             // возвращает температуру по celsius
+    return (5/9) * (this.f - 32);
+  }
+
+  set temperature(celsius){                   // перезаписывает температуру по celsius
+   this.f = (celsius * 9.0) / 5 + 32;
+  }
+} 
+// const thermos = new Thermostat(76); 
+// let temp = thermos.temperature; 
+// thermos.temperature = 26;
+// temp = thermos.temperature; 
+
+// FCC Создать скрипт модуля (12)
+
+/* <html>
+  <body>
+    <!-- Only change code below this line -->
+    <script type="module" src="index.js"></script>
+    <!-- Only change code above this line -->
+  </body>
+</html> */
+
+// FCC Используйте экспорт, чтобы поделиться блоком кода
+
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+ export { uppercaseString, lowercaseString };
+
+// FCC Reuse JavaScript Code Using import
+ import { uppercaseString, lowercaseString } from './string_functions.js';
+
+// FCC Use * to Import Everything from a File (15)
+import * as stringFunctions from "./string_functions.js";
+
+//FCC Create an Export Fallback with export default (16)
+export default function subtract(x, y) {
+  return x - y;
+}
+
+//FCC Import a Default Export (17)
+import subtract from "./math_functions.js";
+subtract(7,4);
+
+//FCC Create a JavaScript Promise
+const makeServerRequest = new Promise((resolve, reject) => {
+
+});
+
+// FCC Complete a Promise with resolve and reject
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer;
+  if(responseFromServer) {
+    resolve ('We got the data');
+  } else {  
+    reject ('Data not received');
+  }
+});
+
+// FCC Handle a Fulfilled Promise with then
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer = true;
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+makeServerRequest.then(result => {
+console.log(result);
+});
+
+// FCC Handle a Rejected Promise with catch
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer = false;
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+makeServerRequest.then(result => {
+  console.log(result);
+});
+makeServerRequest.catch(error => {
+  console.log(error);
+});
+
+// FCC Use typeof to Check the Type of a Variable (21)
+let seven = 7;
+let three = "3";
+console.log(seven + three);
+console.log(typeof seven);
+console.log(typeof three);
