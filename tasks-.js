@@ -1118,3 +1118,195 @@ let three = "3";
 console.log(seven + three);
 console.log(typeof seven);
 console.log(typeof three);
+
+// функция для возврата размена монет начиная с крупных
+function changeMe(moneyIn){
+  let delivery = []
+   if (moneyIn === "£5") {
+      delivery = new Array(25).fill('20p');
+      } else if (moneyIn === "£2") {
+         delivery = new Array(10).fill('20p');
+      } else if (moneyIn === "£1") {
+        delivery = new Array(5).fill('20p');
+      } else if (moneyIn === '50p') {
+        delivery = new Array(2).fill('20p');
+        delivery.push ('10p');
+      } else if (moneyIn === '20p') {
+        delivery = new Array(2).fill('10p');
+      } else {
+        return moneyIn;
+      }
+  return delivery.join(' ')
+    }
+
+    //FCC Match Literal Strings
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /Waldo/; 
+let result = waldoRegex.test(waldoIsHiding);
+
+// FCC Match a Literal String with Different Possibilities
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; 
+let result = petRegex.test(petString);
+
+// FCC Ignore Case While Matching
+let myString = "freeCodeCamp";
+let fccRegex = /freeCodeCamp/i;
+let result = fccRegex.test(myString);
+
+// FCC Extract Matches
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; 
+let result = extractStr.match(codingRegex);
+
+// FCC Find More Than the First Match (6)
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/ig; 
+let result = twinkleStar.match(starRegex); 
+
+// FCC Match Anything with Wildcard Period
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; 
+let result = unRegex.test(exampleStr);
+
+// FCC Match Single Character with Multiple Possibilities (8)
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/gi; 
+let result = quoteSample.match(vowelRegex); 
+
+// FCC Match Letters of the Alphabet
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/ig;
+let result = quoteSample.match(alphabetRegex);
+
+// FCC Match Numbers and Letters of the Alphabet (10)
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/ig; 
+let result = quoteSample.match(myRegex); 
+
+// FCC Match Single Characters Not Specified
+let quoteSample = "3 blind mice.";
+let myRegex = /[^0-9ie]/gi;
+let result = quoteSample.match(myRegex); 
+
+// FCC Match Characters that Occur One or More Times (12)
+let difficultSpelling = "Mississippi";
+let myRegex = /ss+/g; 
+let result = difficultSpelling.match(myRegex);
+
+// FCC Match Characters that Occur Zero or More Times (13)
+let chewieRegex = /Aa*/; 
+let result = chewieQuote.match(chewieRegex);
+
+// FCC Find Characters with Lazy Matching
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<[a-z0-9].*?>/;
+let result = text.match(myRegex);
+
+// FCC Find One or More Criminals in a Hunt
+let text = 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3';
+let reCriminals = /C+/; 
+let result = text.match(reCriminals);
+
+// FCC Match Beginning String Patterns (16)
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; 
+let result = calRegex.test(rickyAndCal);
+
+// FCC Match Ending String Patterns
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; 
+let result = lastRegex.test(caboose);
+
+//FCC Match Everything But Letters and Numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; 
+let result = quoteSample.match(nonAlphabetRegex).length;
+
+// FCC Match All Letters and NumbersPassed
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; 
+let result = quoteSample.match(alphabetRegexV2).length;
+
+// FCC (20) Match All Numbers
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; 
+let result = movieName.match(numRegex).length;
+
+// FCC Match All Non-Numbers
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; 
+let result = movieName.match(noNumRegex).length;
+
+// FCC Restrict Possible Usernames (22)
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z]([0-9][0-9]+|[a-z]+\d*)$/i; 
+let result = userCheck.test(username);
+/*
+^ - начало ввода
+[az] - первый символ - это буква
+[0-9] {2,0} - оканчивается двумя или более цифрами
+| - или
+[az] + - рядом одна или несколько букв
+\ d * - и заканчивается на ноль или более чисел
+$ - конец ввода
+i - игнорировать регистр ввода
+*/
+
+// FCC Match Whitespace
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; 
+let result = sample.match(countWhiteSpace);
+
+// FCC Match Non-Whitespace Characters
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g;
+let result = sample.match(countNonWhiteSpace);
+
+// FCC Specify Upper and Lower Number of Matches
+let ohStr = "Ohhh no";
+let ohRegex = /oh{3,6} no/i; 
+let result = ohRegex.test(ohStr);
+
+// FCC Specify Only the Lower Number of Matches
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; 
+let result = haRegex.test(haStr);
+
+//FCC Specify Exact Number of Matches
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; 
+let result = timRegex.test(timStr);
+
+//FCC Check for All or None (28)
+let favWord = "favorite";
+let favRegex = /favou?rite/; 
+let result = favRegex.test(favWord);
+
+
+// FCC Positive and Negative LookaheadPassed(29)
+let sampleWord = "astronaut";
+let pwRegex = /(?=.{6})(?=.*\d{2})/;
+let result = pwRegex.test(sampleWord);
+console.log(result);
+
+// FCC Check For Mixed Grouping of Characters (30)
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin D. Roosevelt|Eleanor Roosevelt)/; 
+let result = myRegex.test(myString); 
+
+//FCC Reuse Patterns Using Capture Groups
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+) \1 \1$/; 
+let result = reRegex.test(repeatNum);
+
+//FCC Use Capture Groups to Search and Replace
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; 
+let replaceText = "$3 $2 $1"; /
+let result = str.replace(fixRegex, replaceText);
+
+//FCC Remove Whitespace from Start and End (33)
+let hello = "   Hello, World!  ";
+let wsRegex = /(^\s+|\s+$)/g; 
+let result = hello.replace(wsRegex,"");
