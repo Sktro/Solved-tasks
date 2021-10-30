@@ -1303,10 +1303,157 @@ let result = reRegex.test(repeatNum);
 //FCC Use Capture Groups to Search and Replace
 let str = "one two three";
 let fixRegex = /(\w+)\s(\w+)\s(\w+)/; 
-let replaceText = "$3 $2 $1"; /
+let replaceText = "$3 $2 $1"; 
 let result = str.replace(fixRegex, replaceText);
 
 //FCC Remove Whitespace from Start and End (33)
 let hello = "   Hello, World!  ";
 let wsRegex = /(^\s+|\s+$)/g; 
 let result = hello.replace(wsRegex,"");
+
+// функция поиска градуса 3-его угла треугольника 
+function otherAngle(a, b) {
+  return 180 - a - b;
+}
+
+// FCC Use typeof to Check the Type of a Variable
+let seven = 7;
+let three = "3";
+console.log(seven + three);
+
+// FCC Catch Misspelled Variable and Function Names
+let receivables = 10;
+let payables = 8;
+let netWorkingCapital = receivables - payables;
+
+// FCC Catch Unclosed Parentheses, Brackets, Braces and Quotes
+let myArray = [1, 2, 3];
+let arraySum = myArray.reduce(function(a, b) {
+  return a + b;
+});
+
+// FCC Catch Mixed Usage of Single and Double Quotes (5)
+let innerHtml = "<p>Click here to <a href='#Home'>return home</a></p>";
+
+// FCC Catch Use of Assignment Operator Instead of Equality Operator
+let x = 7;
+let y = 9;
+let result = "to come";
+
+if(x == y) {
+  result = "Equal!";
+} else {
+  result = "Not equal!";
+}
+
+// FCC Catch Missing Open and Closing Parenthesis After a Function Call (7)
+function getNine() {
+  let x = 6;
+  let y = 3;
+  return x + y;
+}
+let result = getNine();
+
+// FCC Catch Arguments Passed in the Wrong Order When Calling a Function (8)
+function raiseToPower(b, e) {
+  return Math.pow(b, e);
+}
+let base = 2;
+let exp = 3;
+let power = raiseToPower(base, exp);
+
+// FCC Catch Off By One Errors When Using Indexing
+function countToFive() {
+  let firstFive = "12345";
+  let len = firstFive.length;
+  for (let i = 0; i < len; i++) {
+    console.log(firstFive[i]);
+  }
+}
+
+// FCC Use Caution When Reinitializing Variables Inside a Loop (10)
+function zeroArray(m, n) {
+  let newArray = [];
+  let row = [];
+  for (let i = 0; i < m; i++) {
+     newArray.push(row);
+  }
+   for (let j = 0; j < n; j++) {
+      row.push(0);
+    }
+  return newArray;
+}
+
+// FCC Prevent Infinite Loops with a Valid Terminal Condition
+function myFunc() {
+  for (let i = 1; i <= 4; i += 2) {
+    console.log("Still going!");
+  }
+}
+
+//FCC Use an Array to Store a Collection of Data
+let yourArray = ['one', 2, 'three', true, false, undefined,];
+
+
+// FCC Access an Array's Contents Using Bracket Notation (13)
+let myArray = ["a", "b", "c", "d"];
+myArray[1] = 'e';
+
+// FCC dd Items to an Array with push() and unshift()
+function mixedNumbers(arr) {
+arr.push(7, 'VIII', 9);
+arr.unshift('I', 2, 'three')
+  return arr;
+}
+
+// FCC Remove Items from an Array with pop() and shift()
+function popShift(arr) {
+  let popped = arr.pop(); 
+  let shifted = arr.shift(); 
+  return [shifted, popped];
+}
+
+// FCC Remove Items Using splice()
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+arr.splice(1, 4);
+
+// FCC (17) Add Items Using splice()Passed
+function htmlColorNames(arr) {
+arr.splice(0,2, 'DarkSalmon', 'BlanchedAlmond')
+  return arr;
+}
+
+//FCC Copy Array Items Using slice()
+function forecast(arr) {
+arr = arr.slice(2,4);
+  return arr;
+}
+
+// FCC Copy an Array with the Spread Operator
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+newArr.push([...arr])
+    num--;
+  }
+  return newArr;
+}
+
+ //FCC (20) Combine Arrays with the Spread Operator
+ function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun'];
+  return sentence;
+}
+
+//FCC Check For The Presence of an Element With indexOf() (21)
+function quickCheck(arr, elem) {
+if (arr.indexOf(elem) === -1){
+  return false
+} else {
+  return true
+}
+}
+
+
+
