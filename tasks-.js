@@ -1455,5 +1455,139 @@ if (arr.indexOf(elem) === -1){
 }
 }
 
+// функция замены текста в имени 
+function greet(name){
+  return `Hello, ${name} how are you doing today?`
+}
 
+// функция определяющая объем квадрата в бутылке зная ее радиус, высоту и высоту от квадрата до горлышка
+function iceBrickVolume(radius, bottleLength, rimLength) {
+  let heightSquare = bottleLength - rimLength;
+  return (2 * (radius * radius)) * heightSquare;
+}
 
+// функция возвращает 5 без использования 0123456789*+-/ внутри функции
+function unusualFive() {
+  let newArray = ['one', 'two', 'three', 'four', 'five'];
+  return newArray.length;
+}
+
+// функция ищет имя бойца без учета регистра и возвращает  соответствующий результат 
+var quote = function(fighter) {
+  if (fighter == fighter.match(/conor mcgregor/i))
+    return "I'd like to take this chance to apologize.. To absolutely NOBODY!";
+  else if (fighter == fighter.match(/george saint pierre/i));
+  return "I am not impressed by your performance."
+};
+
+// функция возвращает результат проверки теста на верхниц регистр (5);
+String.prototype.isUpperCase = function() {
+  return (String(this) === this.toUpperCase()) ? true : false;
+  }
+
+  // функция объединяет 2 строки с помощью ES6
+  function joinStrings(string1, string2){
+    return `${string1} ${string2}`
+ }
+
+ // функция удаления всех гласных в строке
+ function shortcut(string){
+  return string.replace(/[aeiou]*/g, '');
+}
+
+// функция сравнения строки с числом без использования .toString(), .join(), .split(), parseInt and .Number().
+function add(a, b){
+  return (a == b) ? true : false;
+  }
+
+  // функция ищет первую цифру в номере (1 или 2 ил 3) возвращая true 
+  function validateCode (code) {
+    let firstNumber = code;
+  return ((''+firstNumber)[0] == 1 || (''+firstNumber)[0] == 2 || (''+firstNumber)[0] == 3) ? true : false;
+  }
+
+// функция сравнивает слово с последней его буквой и выдает true (10)
+function correctTail(bod, tail){
+  let sub = bod.substr(-1);
+  if (sub === tail){
+    return true
+  } else {
+    return false
+    }
+  }
+
+  // функция поиска возведения в степень без использования Math, eval() и ** .
+  function numberToPower(number, power){
+    let result = 1;
+    for (let i = 0; i < power; i++) {
+      result *= number;
+    }
+    return result;
+  }
+  
+  // функция возвращает сокращенное время (test shortenToDate("Friday May 2, 9am"))
+  function shortenToDate(longDate) {
+    let text = longDate.replace(/[,]/g, '');
+    let newArray = text.split(' ');
+    newArray.pop();
+    return newArray.join(' ');
+  }
+
+  // функция вычисления индекса массы тела (13)
+  function bmi(weight, height) {
+    let bmiResult = weight / Math.pow(height, 2);
+    return (bmiResult <= 18.5) ? "Underweight" : 
+    (bmiResult <= 25.0) ? "Normal":
+    (bmiResult <= 30.0) ? "Overweight":
+    (bmiResult > 30) ? "Obese" : NaN;
+  }
+
+  // функция подсчета очков комады после чемпионата (test points(["1:0","2:0","3:0","4:4","2:2","3:3","1:4","2:3","2:4","3:4"]))
+  function points(games) {
+    let points = 0
+    for (let i = 0; i < games.length; i++){
+      (games[i].charAt(0) > games[i].charAt(2)) ? points+=3:
+      (games[i].charAt(0) < games[i].charAt(2)) ? points+=0:
+      (games[i].charAt(0) == games[i].charAt(2)) ? points+=1: NaN;
+    }
+    return points
+  }
+
+  // функция простого калькулятора (15)
+  function calculator(a,b,sign){
+return (sign == '+') ? a + b : 
+(sign == '*') ? a * b :
+(sign == '-') ? a - b :
+(sign == '/') ? a / b : "unknown value"
+}
+
+// функция удаления (!) с конца строки
+function remove(s){
+  return s.replace (/[!]$/g, '')
+ }
+
+ // функция в зависимости от возраста дает ответ (17)
+ function peopleWithAgeDrink(old) {
+  return (old < 14) ? "drink toddy" :
+         (old < 18) ? "drink coke" :
+         (old < 21) ? "drink beer" :
+         (old < 30) ? "drink whisky" : undefined;
+};
+
+// функция для подсчета расхода воды 0.5/час с округлением к наименьшему числу (18)
+function litres(time) {
+  return Math.floor(time * 0.5);
+}
+
+// L1: Set Alarm
+function setAlarm(employed, vacation){
+return (employed === vacation) ? false:
+(employed !== true) ? false:
+(employed !== false) ? true: undefined;
+}
+
+// функция для расчета убийства драконов, если на одного дракона нужно 2 пули. (20)
+function hero(bullets, dragons){
+  let result = bullets / dragons;
+  return (result >= 2) ? true : false;
+ }
