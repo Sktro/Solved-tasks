@@ -1591,3 +1591,73 @@ function hero(bullets, dragons){
   let result = bullets / dragons;
   return (result >= 2) ? true : false;
  }
+
+// функция принимает строку и возвращает число букв самого длинного слова в строке
+ function findLongest(str) {
+  
+  var spl = str.split(" ");
+  var longest = []
+  
+  for (var i = 0; i < spl.length; i++) {
+      longest.push(spl[i].length)
+}
+ return Math.max.apply(null, longest);
+}
+
+// функция замены всех букв в строке на # кроме 4 последних знаков.
+function maskify(cc) {
+  if (cc === ""){
+    return "";
+  }
+  let lastNumbers = []
+  let newArray = cc.split('');
+  for (let i = 0; i < 4; i++) {
+      lastNumbers[i] = newArray.pop();
+  } 
+  for (let i = 0; i < newArray.length; i++) {
+      newArray[i] = '#';
+  } 
+  lastNumbers.reverse();
+  lastNumbers = lastNumbers.join('');
+  newArray = newArray.join('');
+return newArray + lastNumbers;
+}
+
+// функция сравнивает кол-во букв верхнего и нижнего регистра и возвращает строку в том регистре, в котором наибольшее кол-во букв.
+function solve(s){
+  let upperCase = [];
+  let lowerCase = [];
+for ( let i = 0; i < s.length; i++) {
+  if (s[i] === s[i].toUpperCase()) {
+    upperCase.push(s[i]);
+    } else if (s[i] === s[i].toLowerCase()) {
+      lowerCase.push(s[i]);
+    }
+} 
+  if (upperCase.length > lowerCase.length) {
+    return s.toUpperCase();
+  } else {
+    return s.toLowerCase();
+  }
+}
+
+// функция принимает строку и вычисляет сколько гласных букв в строке написано слитно, возвращяя кол-во максимально написанных в строке гласных букв слитно.
+function solve(s){
+  let myRegex = /(a|e|i|o|u)+/g; 
+  let result = s.match(myRegex);
+    let quantityLetters = []
+    for (let i = 0; i < result.length; i++) {
+      quantityLetters.push(result[i].length)
+    }
+    return Math.max.apply(null, quantityLetters);
+  }
+
+  //  функция принимает строку и возвращает число букв самого короткого слова в строке
+  function findShort(s){
+    var spl = s.split(" ");
+    var longest = []
+    for (var i = 0; i < spl.length; i++) {
+        longest.push(spl[i].length)
+  }
+   return Math.min.apply(null, longest);
+  }
