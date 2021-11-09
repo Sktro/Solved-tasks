@@ -1661,3 +1661,108 @@ function solve(s){
   }
    return Math.min.apply(null, longest);
   }
+
+  // функция расчитывает дистацию с учетом галлонов и среднего расхолда топлива
+  const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+    if (distanceToPump / mpg <= fuelLeft) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+// функция возвращает массив с удвоенными значениями
+  function maps(x){
+    let result = [];
+  for(var i = 0; i < x.length; i++) {
+        result.push(x[i]*2);
+      }
+    return result
+  }
+
+  // функция проверят делится ли первое число в функции на все последующие и выдает булево значение 
+  function isDivisible(n,...arg){
+    let newArray = [...arg];
+    let arrayTrue = [];
+    let arrayFalse = [];
+    for (let i = 0; i < newArray.length; i++) {
+      if (n % newArray[i] == 0) {
+        arrayTrue.push(true);
+      } else {
+        arrayFalse.push(false);
+      }
+    }
+    if (arrayFalse.length >= 1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  // функция перемещает все найденные восклицательные знаки в конец строки 
+  function remove(s){
+    let newArray1 = [];
+    let newArray2 = [];
+    let sArray = s.split('');
+    for (let i = 0; i < sArray.length; i++) {
+      if (sArray[i] === '!') {
+        newArray1.push(sArray[i]);
+      } else if (sArray[i] !== '!') {
+        newArray2.push(sArray[i]);
+      }
+    }
+    return newArray2.join('') + newArray1.join('');
+  }
+
+  // функция складывает все числа от 0 до данного номера в функции
+  var summation = function (num) {
+    let newArray = [];
+    let sum = 0;
+    for (let i = 0; i <= num; i++){
+      newArray.push(i)
+    }
+    for (let i = 0; i < newArray.length; i++){
+    sum += newArray[i];
+  }
+    return sum;
+  }
+
+  // функция находит небходимый элемент в массиве и возвращает его расположение по счету
+  function findNeedle(haystack) {
+    for(let i = 0; i < haystack.length; i++) {
+      if (haystack[i] === 'needle') {
+        return `found the needle at position ${i}`
+      }
+    }
+  }
+
+  // функция принимает часы минуты и секунды  конвертируя в милисекунды 
+  function past(h, m, s){
+    let hourInMilliseconds = h * 3600000;
+    let minutesInMilliseconds = m * 60000;
+    let secondInMilliseconds = s * 1000;
+    return hourInMilliseconds + minutesInMilliseconds + secondInMilliseconds
+  }
+
+  // функция принимает имя и возвращает приветствие, для одного имени особое приветсвие 
+  function greet(name){
+    if(name === "Johnny"){
+      return "Hello, my love!";
+    } else {
+      return "Hello, " + name + "!";
+    }
+  }
+
+  // функция убирает максимальное и минимальное число в массиве и складывает остальные 
+  function sumArray(array) {
+    if (!array || array.length <= 1) {
+       return 0
+     }
+   let min = Math.min.apply(null, array);
+   let max = Math.max.apply(null, array);
+   let sum = 0;
+   for (let i = 0; i < array.length; i++) {
+     sum += array[i];
+   }
+   return sum - (max + min);
+ }
