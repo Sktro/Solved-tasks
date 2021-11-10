@@ -1766,3 +1766,63 @@ function solve(s){
    }
    return sum - (max + min);
  }
+
+ // функция вычисляет среднее значение чисел из всего массива 
+
+ function find_average(array) {
+  if (array.length === 0) {
+    return 0
+  }
+    let sum = 0
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i]
+    }
+    return sum / array.length
+    }
+
+    // функция принимает N и выдет массив с подсчетом от 1 до N 
+    function monkeyCount(n) {
+      let newArray = [];
+      let sum = 0;
+      for (let i = 1; i <= n; i++){
+        newArray.push(i)
+      }
+      return newArray;
+  }
+
+  // функция возвращает при bonus true умноженную зарплату на 10 иначе на 1
+  function bonusTime(salary, bonus) {
+    if (bonus === true) {
+      return "\u00A3" + (salary * 10)
+    } else {
+      return "\u00A3" + (salary * 1)
+    }
+    }
+
+    // функция перемножает все элементы массива по порядку 
+    function grow(x){
+      let sum = 1;
+        for (let i = 0; i < x.length; i++) {
+          sum *= x[i];
+        }
+        return sum
+      }
+
+      // функция преобразует строку в верхний регистр
+      function makeUpperCase(str) {
+        return str.toUpperCase();
+        }
+
+        // функция замены всех T в строке на U
+        function DNAtoRNA(dna) {
+          return dna.replace(/T/g, 'U')
+          }
+
+          // функция возвращает массив первых n кратных x
+          function countBy(x, n) {
+            let z = [];
+          for (let i = 1; i <= n; i++) {
+            z.push(x * i)
+          }
+            return z;
+          }
