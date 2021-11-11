@@ -1826,3 +1826,48 @@ function solve(s){
           }
             return z;
           }
+
+          // функция камень ножницы бумага
+          const rps = (p1, p2) => {
+            let gameYrray =['scissors', 'rock', 'paper']
+            if(p1 === p2) {
+              return "Draw!"
+            } 
+            return (p1 === 'scissors' && p2 === 'rock') ? `Player ${2} won!`:
+                   (p1 === 'scissors' && p2 === 'paper') ? `Player ${1} won!`:
+                   (p1 === 'rock' && p2 === 'scissors') ? `Player ${1} won!`:
+                   (p1 === 'rock' && p2 === 'paper') ? `Player ${2} won!`:
+                   (p1 === 'paper' && p2 === 'scissors') ? `Player ${2} won!`:
+                   (p1 === 'paper' && p2 === 'rock') ? `Player ${1} won!`: undefined;
+          };
+
+          // функция принимает масиив строк ввиде числа и числа, преобразует всё в числа и выдает сумму
+          function sumMix(x){
+            let arr2 = x.map(Number);
+              let sum = 0;
+              for (let i = 0; i < arr2.length; i++){
+                sum += arr2[i];
+              }
+              return sum
+            }
+
+            // функция ведет подсчет овец принимает значение ввиде числа 
+            var countSheep = function (num){
+              let newArray = [];
+              let sum = 0;
+              for (let i = 1; i <= num; i++){
+                newArray.push(i + ' sheep...');
+              }
+              return newArray.join('');
+        }
+
+        // функция сравнивает у beast первую и последнюю букву в стровке с dish и выдает булево значение
+        function feast(beast, dish) {
+          return (beast[0] + beast.slice(-1) === dish[0] + dish.slice(-1)) ? true : false;
+          }
+
+          // функция возвращает вместо массива строк, строку с пробелами.
+
+          function smash (words) {
+            return words.join(' ')
+            };
