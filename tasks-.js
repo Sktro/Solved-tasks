@@ -1871,3 +1871,97 @@ function solve(s){
           function smash (words) {
             return words.join(' ')
             };
+
+            // функция возвращает массив и возвращет массив через 1 эелемент
+            function removeEveryOther(arr){
+              let array = [];
+             for (let i = 0; i < arr.length; i+=2) {
+               array.push(arr[i]);
+             }
+              return array
+            }
+
+            // функция возвращает кол-во нечетных чисел при делении на 2
+
+function oddCount(n){
+  return Math.floor(n / 2);
+}
+
+
+// функция принимает 3 значения определяя среднее и выдает сооствествующий ответ
+
+function getGrade (s1, s2, s3) {
+  let score = (s1 + s2 + s3) / 3;
+return (90 <= score && score <= 100) ? 'A' :
+(80 <= score && score <= 90) ? 'B' :
+(70 <= score && score <= 80) ? 'C':
+(60 <= score && score <= 70) ? 'D':
+(0 <= score && score <= 60) ? 'F':
+NaN
+}
+
+// функция принимает массив и число, возвращая массив чисел, которые делятся на число без остатка 
+function divisibleBy(numbers, divisor){
+  let newArray = [];
+for (let i = 0; i < numbers.length; i++) {
+  if(numbers[i] % divisor === 0) {
+    newArray.push(numbers[i])
+  }
+}
+  return newArray;
+}
+
+// функция принимает число (лепестки) и ведет счет  по кругу массива до данного числа в конце возвращает ответ.
+
+function howMuchILoveYou(nbPetals) {
+  let newArray = ['I love you', 'a little', 'a lot', 'passionately', 'madly', 'not at all'];
+if (nbPetals <= 6) {
+  let number = nbPetals - 1;
+  return newArray[number]
+} else if (nbPetals >= 7){
+  let number = nbPetals - 1;
+  for (let i = 6; i <= number; i+0) {
+    number -= i
+}
+return newArray[number]
+}
+}
+
+//функция принимает строку и букву возвращяя количество совпавших букв в строке 
+function strCount(str, letter){  
+  let count = 0;
+  let newArray = str.split('');
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] === letter) {
+      count++;
+    } 
+  }
+  return count;
+}
+
+// функция возвращает строку 1 и 0 последовательно в колличестве введенного значения
+function stringy(size) {
+  let newArray = [];
+    for (let i = 0; i < size; i++) {
+      if (i % 2 === 0) {
+        newArray.push('1')
+      } else {
+        newArray.push('0')
+      }
+    }
+    return newArray.join('')
+  }
+
+// функция перемножает 2 массива и возвращает разницу
+function findDifference(a, b) {
+  return Math.abs(a.reduce((m, y) => m * y) - b.reduce((n, h) => n * h))
+ }
+
+ // функция принимает массив и число возвращая элемент массива в степени n 
+ function index(array, n){
+  if (array.length-1 < n){
+    return -1
+    } else {
+      return Math.pow(array[n], n);
+    }
+ }
