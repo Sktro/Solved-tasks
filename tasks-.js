@@ -1965,3 +1965,111 @@ function findDifference(a, b) {
       return Math.pow(array[n], n);
     }
  }
+
+ // ОТРАБОТКА ЦИКЛОВ----------------------------------------------------------------
+
+ // функция выводит все числа от 1 до 100 циклом
+ const numbers = () => {
+  for (var i = 1; i <= 100; i++) {
+      console.log(i);
+    }
+  }
+
+// функция выводит все числа от 100 до 1 циклом
+const numbersMin = () => {
+  for (var i = 100; i >= 1; i--) {
+      console.log(i);
+    }
+  }
+
+// функция выводит все четные до 100
+const numbersEven = () => {
+  for (var i = 2; i <= 100; i+=2) {
+      console.log(i);
+    }
+  }
+
+  // функция заполняет массив 10 иксами с помощью цикла 
+  const arrayTenX = () => {
+    newArray = [];
+    for (var i = 0; i < 10; i++) {
+      newArray.push('x')
+      }
+      return newArray
+    }
+
+    // функция заполняет массив числами от 1 до 10
+    const arrayOneToTen = () => {
+      newArray = [];
+      for (var i = 1; i <= 10; i++) {
+        newArray.push(i)
+        }
+        return newArray
+      }
+
+      // функция заполняет массив 10 случайными числами от 0 до 1 с двумя знаками после запятой
+      const arrayRandom = () => {
+        newArray = [];
+        for (var i = 1; i <= 10; i++) {
+          newArray.push(Math.floor(Math.random() * 100) / 100)
+          }
+          return newArray
+        }
+
+        // функция заполняет массив случайными числами от 1 до 10 с помощью цикла 
+
+      const arrayRandom2 = () => {
+        newArray = [];
+        for (var i = 1; i <= 10; i++) {
+          newArray.push(Math.floor(Math.random() * 10)+1)
+          }
+          return newArray
+        }
+
+        // функция принимает массив чисел и возвращает массив чисел больше 0 и меньше 10
+        function findNumbers(array) {
+          let numbers = [];
+          for (var i = 0; i < array.length; i++){
+            if(array[i] > 0 && array[i] < 10){
+              numbers.push(array[i])
+            }
+          }
+          return numbers
+        }
+
+// функция возвращает 'is here' если в данном массиве есть цифра 5 иначе ничего не возвращает
+        function findFive(array) {
+          for (var i = 0; i < array.length; i++){
+            if(array[i] === 5){
+              return 'is here'
+            } 
+        }
+      }
+
+      // функция с помощью цикла возвращает сумму массива
+      function arraySum(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          sum += array[i]
+        }
+        return sum
+      }
+
+// функция с помощью цикла возвращает сумму квадратов массива
+function arraySumSq(array) {
+  let sumSq = 0;
+  for (let i = 0; i < array.length; i++) {
+    sumSq += Math.pow(array[i], 2)
+  }
+  return sumSq
+}
+
+// функция принимает массив чисел и с помощью цикла возвращает среднее число элементов массива
+function arrayAverage(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  return sum / array.length
+}
+//---------------------------------------------------------------------------------------------
