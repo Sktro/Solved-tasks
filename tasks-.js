@@ -2073,3 +2073,55 @@ function arrayAverage(array) {
   return sum / array.length
 }
 //---------------------------------------------------------------------------------------------
+
+// функция принимает число и возвращает массив от 1 до n
+
+function createArray(number){
+  var newArray = [];
+  
+  for(var counter = 1; counter <= number; counter++){
+    newArray.push(counter);
+  }
+  
+  return newArray;
+}
+
+// функция принимает строку, которая начинается с числа и возвращает только число 
+function getAge(inputString){
+  return Number(inputString.charAt())
+ }
+
+ // функция принимает числа включая отрицательные возвращая булево значение
+ function checkAlive (health) {
+  if (health < 0 || !health) {
+    return false
+  } else if (health > 0) {
+    return true
+  }
+}
+
+// функция принимает строки a b возвращая сумму тоже ввиде строки
+function sumStr(a,b) {
+  let NumA = Number(a)
+  let NumB = Number(b)
+  let result = NumA + NumB;
+   return String(result)
+ }
+
+ // функция возвращает четное число по номеру начиная с 0 
+ function nthEven(n){
+  return n * 2 - 2
+ }
+
+ // функция принимает число, умножает на 50 и прибавляет 6, если введена строка - выдает "Error"
+ function problem(x){
+  if (x === String(x)) {
+    return "Error"
+  }
+  return x * 50 + 6
+}
+
+// Simple Fun #1: Seats in Theater (codewars) 
+function seatsInTheater(nCols, nRows, col, row) {
+  return  (nCols - (col-1)) * (nRows - row);
+ }
