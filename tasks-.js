@@ -2125,3 +2125,39 @@ function sumStr(a,b) {
 function seatsInTheater(nCols, nRows, col, row) {
   return  (nCols - (col-1)) * (nRows - row);
  }
+
+ // функция проверяет является ли factor равным base
+ function checkForFactor (base, factor) {
+  return (base % factor === 0) ? true : false;
+ }
+
+ // функция изменяет цену в зависимости от кол-ва n 
+ function saleHotdogs(n){
+  return (n < 5) ? n * 100:
+  (n >= 5 && n < 10) ? n * 95:
+  (n >= 10) ? n * 90: undefined
+}
+
+// функция замены всех гласных в строке на ! 
+function replace(s){
+  return s.replace(/[aeiou]/gi, '!');
+  }
+
+  // функция приветствия принимающая имя 
+  function sayHello(name) {
+    return `Hello, ${name}`
+  }
+
+  // функция удаляющая все 0 в конце строки 
+  function noBoringZeros(n) {
+    let newStrung = String(n)
+  let deleteZero = newStrung.replace(/[0]+$/g, '')
+  return Number(deleteZero)
+  }
+
+  // функция переворачивает строку
+   function reverse(string){
+  let newArray = string.split(' ')
+  let reverseArray = newArray.reverse()
+  return reverseArray.join(' ')
+}
