@@ -2161,3 +2161,57 @@ function replace(s){
   let reverseArray = newArray.reverse()
   return reverseArray.join(' ')
 }
+
+// функция конвертирует подсчет этажей в  лифте с американской системы на европейскую
+
+function getRealFloor(n) {
+  if(n >= 1 && n < 13) {
+    return n - 1
+  } else if (n >= 13) {
+    return n - 2
+  } else {
+    return n
+  }
+}
+
+// функция принимает кол-во здоровья и урон, возвращая оставшееся здоровье 
+function combat(health, damage) {
+  if (health > damage) {
+    return health - damage
+  } else { 
+  return 0}
+}
+
+//функция проверят наличие в массиве значения х возвращая булево значение
+function check(a, x) {
+  let result 
+  for (let i = 0; i < a.length; i++) {
+    if(a[i] === x) {
+      return result = true
+    } else {
+      result = false
+    }
+}
+  return result
+}
+
+// функция принимает название животного и возвращает требуемое значение 
+function mouthSize(animal) {
+  let animalCase = animal.toLowerCase()
+  if (animalCase === "alligator") {
+    return "small"
+  } else {
+    return "wide"
+  }
+}
+
+// функия выводит в консоле лог строку
+function helloWorld () {
+  var str = "Hello World!"
+  console.log("Hello World!")
+}
+
+// функция возвращает символ ASCII для значения С
+function getChar(c){
+  return String.fromCharCode(c)
+}
